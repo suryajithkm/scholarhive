@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+          #confirmPasswordError {
+  font-size: 12px;
+}
+      body {
+        background-image: url(bg.jpg);
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .login {
+              border: none;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              width: 140vh;
+              height: 90vh;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              border-radius: 13px;
+              background-color: white;
+
+            }
+            .Heading{
+          position: absolute;
+          top: 0;
+          left: 0;
+          padding: 10px;
+          font-weight: lighter;
+          font-size: 27px;
+
+
+
+
+        }
+        a{
+          text-decoration: none;
+          color: #000;
+
+        }
+        .field input {
+          justify-content: center;
+            align-items: center;
+            display: inline-block;
+            flex-direction: column;
+            width: 7cm;
+      height: 0.75cm;
+      background-image: url(pexels-form.jpg);
+      border-color: white;
+
+        }
+        .bt {
+              background-image: url(pexels-form.jpg);
+                    border: 2PX solid black;
+                    color: black;
+                   height: 0.75cm;
+                    
+                    text-align: center;
+                    text-decoration: none;
+                    display: inline-block;
+                    font-size: 16px;
+                    position: relative;
+                   
+            }
+
+            .bt:hover {
+              background-image: url(pexels-form.jpg);
+              background-image: none;
+              color: black;
+              cursor: pointer;
+              font-weight: bold;
+            }
+            .bt2 {
+              background-image: url(pexels-form.jpg);
+                    border: 2PX solid black;
+                    color: black;
+                   height: 0.75cm;
+                   width: 7.2cm;
+                    
+                    text-align: center;
+                    text-decoration: none;
+                    display: inline-block;
+                    font-size: 16px;
+                    position: relative;
+                    top: 15px;
+                   
+            }
+
+            .bt2:hover {
+              background-image: url(pexels-form.jpg);
+              background-image: none;
+              color: black;
+              cursor: pointer;
+              font-weight: bold;
+            }
+            .left {
+                    box-sizing: border-box;
+                    justify-content: center;
+                    align-items: center;
+                    display: flex;
+                    width: 30%;
+                    height: 90vh;
+                    background-image: url(pexels.jpg);
+                    border-top-left-radius: 13px;
+                    border-bottom-left-radius: 13px;
+                  }
+                  .right {
+                    box-sizing: border-box;
+                    height: 90vh;
+                    width: 70%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: white;
+                    border-top-right-radius: 13px;
+                    border-bottom-right-radius: 13px;
+                  }
+                  .signin {
+                    box-sizing: border-box;
+                    border: none;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 140vh;
+                    height: 90vh;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                  
+                    border-radius: 10px;
+                  }
+            
+    </style>
+  </head>
+  <body>
+    <div class="signin">
+        <div class="left">
+          <div class="text">
+            <h2>Forgot Your Password?</h2>
+            <p>Dont worry. We can help.</p>
+        </div>
+    </div>
+    <div class="right">
+            <div class="form">
+                <form action="">
+                <h1>Reset Password</h1>
+               
+                <div class="field">
+                    <input
+                    type="password"
+                    name="password"
+                    id="password"
+                    placeholder="New password"
+                    required
+                  />
+                 <br>
+                  <input
+                    type="password"
+                    name="confirmpassword"
+                    placeholder="Re enter Password"
+                    id="confirmPassword"
+                  />
+                  <br>
+                  <span id="confirmPasswordError"style="color: red;"></span><br>
+      
+                
+                  <button type="submit" class="bt2" id="submitButton">Submit</button>
+                  
+
+  </body>
+  
+ <script>
+  const passwordInput = document.getElementById('password');
+  const confirmPasswordInput = document.getElementById('confirmPassword');
+  const confirmPasswordError = document.getElementById('confirmPasswordError');
+  const submitButton = document.getElementById('submitButton');
+
+  function validatePassword() {
+    const passwordRegex = /^(?=.*\d)(?=.*[A-Z]).{8,}$/;
+    return passwordRegex.test(passwordInput.value);
+  }
+
+  function validateConfirmPassword() {
+    if (passwordInput.value !== confirmPasswordInput.value) {
+      confirmPasswordError.textContent = 'Passwords do not match!';
+      submitButton.disabled = true;
+    } else {
+      confirmPasswordError.textContent = '';
+      submitButton.disabled = false;
+    }
+  }
+
+  function validatePasswordInput() {
+    if (!validatePassword()) {
+      passwordInput.setCustomValidity('Password must be at least 8 characters long, contain at least one capital letter, and at least one number.');
+      submitButton.disabled = true;
+    } else {
+      passwordInput.setCustomValidity('');
+      submitButton.disabled = false;
+    }
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault(); // prevent the default form submission
+    if (validatePassword() && passwordInput.value === confirmPasswordInput.value) {
+      window.location.href = 'login.html';
+    } else {
+      alert('Password must be at least 8 characters long, contain at least one capital letter, and at least one number.');
+    }
+  }
+
+  passwordInput.addEventListener('input', validatePasswordInput);
+  confirmPasswordInput.addEventListener('input', validateConfirmPassword);
+  submitButton.addEventListener('click', handleSubmit);
+</script>
+
+  </script>
+  
+</html>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="login here" />
+    <meta
+      name="google-signin-client_id"
+      content="603403310556-aeqd3tvhj60fi41hp3u4lrgi0oko63n2.apps.googleusercontent.com"
+    />
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+    <style>
+
+            .bt {
+              background-image: url(pexels-form.jpg);
+                    border: 2PX solid black;
+                    color: black;
+                    padding: 17px 78px;
+                    border-radius: 34px;
+                    text-align: center;
+                    text-decoration: none;
+                    display: inline-block;
+                    font-size: 16px;
+                    position: relative;
+            }
+
+            .bt:hover {
+              background-image: url(pexels-form.jpg);
+              background-image: none;
+              color: black;
+              cursor: pointer;
+              font-weight: bold;
+            }
+
+            .login {
+              border: none;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              width: 140vh;
+              height: 90vh;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              border-radius: 13px;
+
+            }
+            body {
+              background-image: url(bg.jpg);
+              font-family: Arial, Helvetica, sans-serif;
+            }
+            .right {
+              height: 90vh;
+              width: 30%;
+              background-image: url(pexels.jpg);
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              border-top-right-radius: 13px;
+              border-bottom-right-radius: 13px;
+
+          }
+          .text{
+              align-items: center;
+              margin-left: 31px;
+
+          }
+              .left {
+              justify-content: center;
+              align-items: center;
+              display: flex;
+              width: 70%;
+              height: 90vh;
+              background-color: white;
+              border-bottom-left-radius: 13px;
+              border-top-left-radius: 13px;
+
+            }
+            .logo{
+              width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 2px solid #333; /* set the border to a dark color */
+        border-color: #ccc; /* lighten the border color */
+
+        background-color: #f0f0f0;
+        color: #333;
+        overflow: hidden;
+
+        }
+        .logo:hover{
+          cursor: pointer;
+        }
+        .field {
+          width: 7cm;
+          height: 0.75cm;
+          background-color: #cccccc;
+        }
+        input[name="email"] {
+
+        background-image: url("no bg/mail.png");
+        background-size: 25px 25px;
+        background-repeat: no-repeat;
+        padding-left: 25px;
+        border: none;
+        background-color: #ccd9e0
+
+      }
+      input[name="password"] {
+
+      background-image: url("no bg/pass.png");
+      background-size: 20px 20px;
+      background-repeat: no-repeat;
+      padding-left: 25px;
+      border: none;
+      background-color: #ccd9e0
+      }
+      .form
+      {
+          justify-content: center;
+          align-items: center;
+          display: flex;
+          flex-direction: column;
+
+      }
+
+      br {
+          font-size: 2em;
+        }
+        .Heading{
+          position: absolute;
+          top: 0;
+          left: 0;
+          padding: 10px;
+          font-weight: lighter;
+          font-size: 27px;
+
+
+
+
+        }
+        a{
+          text-decoration: none;
+          color: #000;
+
+        }
+        .bt[type="submit"]
+{
+  top: 31px;
+  left: 31px;
+  right: 0px;
+}   
+#role {
+  width: 7cm;
+  height: 0.75cm;
+  border-radius: 0.2cm;
+ text-align: center;
+  margin-left: 9px;
+}
+
+ </style>
+  </head>
+  <body>
+    <div class="login">
+        <div class="left">
+            <h1 class="Heading"> <a href="home.html">ScholarHive</a> </h1>
+            <div class="form">
+                <h1>Sign in to Scholarhive</h1>
+                <div>
+                  <span class="g-signin2" data-longtitle="true">
+                </div>
+                <p>or use your email account</p>
+                 <form action="connect3.php" method="post">
+                  <select id="role" name="role">
+                    <option selected disabled >Login As</option>
+                    <option  value="user" >USER</option>
+                    <option  value="admin">ADMIN</option>
+                  </select>
+                  <br>
+                    <input class="field"
+                    type="text"
+                    name="email"
+                    id="email"
+                    placeholder= "Email Or Username"
+                    required
+                    aria
+                    />
+                    <br>
+                    <input 
+                    class="field"
+                    type="password"
+                    name="password"
+                    id="password"
+                    placeholder="password"
+                    required
+                    aria
+                    />
+                    <br>
+                    
+                    <a href="resetpass.html">Forgot your Password? </a>
+                    <br>
+                    <button
+                    type="submit"
+                    class="bt"
+                    value="submit"
+                    >SIGN IN</button>
+                </form>
+            </div>
+        </div>
+        <div class="right">
+            <div class="text">
+                <h3>Hello,Friend!</h3>
+                <p>Enter your personal details and start your journey with us</p>
+                <button
+                    type="button"
+                    class="bt"
+                    onclick="location.href='SIGNP.HTML'"
+                >SIGN UP</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function onSignIn() {
+            gapi.auth2.init({
+                client_id: '603403310556-aeqd3tvhj60fi41hp3u4lrgi0oko63n2.apps.googleusercontent.com603403310556-aeqd3tvhj60fi41hp3u4lrgi0oko63n2.apps.googleusercontent.com'
+            }).then(() => {
+                gapi.auth2.getAuthInstance().signIn().then(() => {
+                    console.log('User signed in successfully!');
+                    // handle the sign-in flow
+                }, (error) => {
+                    console.error(error);
+                    // handle the error
+                });
+            });
+        }
+        // Function to toggle scholarship category select box visibility based on user/admin selection
+function toggleScholarshipCategory() {
+  var role = document.getElementById("role").value;
+  var scholarshipCategory = document.getElementById("sc");
+
+  if (role === "user") {
+    scholarshipCategory.style.display = "inline-block";
+    scholarshipCategory.required = true;
+  } else {
+    scholarshipCategory.style.display = "none";
+    scholarshipCategory.required = false;
+  }
+}
+
+// Function to handle login form submission
+function login() {
+  var role = document.getElementById("role").value;
+
+  if (role === "user") {
+    window.location.href = "userhome.html";
+  } else if (role === "admin") {
+    window.location.href = "adminhome.html";
+  }
+}
+
+    </script>
+    
+    </html>

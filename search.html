@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eligibility Criteria</title>
+    <style>
+      body {
+        background-image: url(bg.jpg);
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .form {
+        width: 90vh;
+        height: 140vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .box {
+        border: 1px solid black;
+        width: 73vh;
+        height: 117px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      label {
+        margin-right: 10px;
+      }
+
+      select {
+        margin-top: 10px;
+      }
+      label {
+        margin-right: 10px;
+      }
+      br {
+        line-height: 3em;
+      }
+      nav a {
+        color: #000;
+        text-decoration: none;
+        font-size: medium;
+        text-align: justify;
+        padding: 10px;
+        position: relative;
+        top: 50px;
+      }
+      nav a:hover {
+        font-weight: bolder;
+        text-decoration: underline;
+      }
+      .Heading a {
+        font-family:Dosis;
+        font-size: 50px;
+        color: #000;
+        text-decoration: none;
+        position: relative;
+      }
+      .title {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-right: 50px;
+        padding-left: 10px;
+        margin-bottom: -83px;
+      }
+      .button {
+        display: flex;
+        justify-content: center;
+        margin-top: auto; /* Push the button wrapper to the bottom */
+        position: relative;
+        margin-top: 20px;
+      }
+      .second-bt {
+        margin-left: 10px; /* Add some space to the left of the button */
+      }
+      .signin {
+        background-color: #60aede;
+                    box-sizing: border-box;
+                    border: none;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 140vh;
+                    
+                    height: 90vh;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                  
+                    border-radius: 10px;
+                  }
+    </style>
+  </head>
+  <body>
+    <div class="title">
+      <h1 class="Heading"><a href="#"> EXPLORE</a></h1>
+      <nav class="nav">
+        <a href="userhome.html">HOME</a>
+        <a href="Login.html"> <em>LOGOUT</em></a>
+      </nav>
+    </div>
+    <div class="signin">
+    <div class="form">
+      <form action="connect2.php" method="post">
+        <h2>Enter Your Details!</h2>
+        <label for="State">Domicile State/UT</label>
+        <br />
+        <select name="State" title="State" id="State">
+          <option value="" selected disabled>Choose Your State</option>
+          <option value="Andhra Pradesh">Andhra Pradesh</option>
+          <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+          <option value="Assam">Assam</option>
+          <option value="Bihar">Bihar</option>
+          <option value="Chhattisgarh">Chhattisgarh</option>
+          <option value="Goa">Goa</option>
+          <option value="Gujarat">Gujarat</option>
+          <option value="Haryana">Haryana</option>
+          <option value="Himachal Pradesh">Himachal Pradesh</option>
+          <option value="Jharkhand">Jharkhand</option>
+          <option value="Karnataka">Karnataka</option>
+          <option value="Kerala">Kerala</option>
+          <option value="Madhya Pradesh">Madhya Pradesh</option>
+          <option value="Maharashtra">Maharashtra</option>
+          <option value="Manipur">Manipur</option>
+          <option value="Meghalaya">Meghalaya</option>
+          <option value="Mizoram">Mizoram</option>
+          <option value="Nagaland">Nagaland</option>
+          <option value="Odisha">Odisha</option>
+          <option value="Punjab">Punjab</option>
+          <option value="Rajasthan">Rajasthan</option>
+          <option value="Sikkim">Sikkim</option>
+          <option value="Tamil Nadu">Tamil Nadu</option>
+          <option value="Telangana">Telangana</option>
+          <option value="Tripura">Tripura</option>
+          <option value="Uttar Pradesh">Uttar Pradesh</option>
+          <option value="Uttarakhand">Uttarakhand</option>
+          <option value="West Bengal">West Bengal</option>
+          <option value="andaman-nicobar">Andaman and Nicobar Islands</option>
+          <option value="chandigarh">Chandigarh</option>
+          <option value="dadra-nagar-haveli">
+            Dadra and Nagar Haveli and Daman and Diu
+          </option>
+          <option value="lakshadweep">Lakshadweep</option>
+          <option value="puducherry">Puducherry</option>
+        </select>
+        <br />
+        <label for="Religion">Religion</label>
+        <br />
+        <select name="Religion" title="Religion" id="Religion">
+          <option value="" selected disabled>Choose Your Religion</option>
+          <option value="Muslim">Muslim</option>
+          <option value="Hindu">Hindu</option>
+          <option value="christian">Christian</option>
+          <option value="jain">Jain</option>
+          <option value="sikh">Sikh</option>
+          <option value="paris">Parsi</option>
+          <option value="buddhist">Buddhist</option>
+          <option value="others">Others</option>
+        </select>
+        <br />
+        <label for="Caste">Caste/Community Category</label>
+        <br />
+        <select name="Caste" title="Caste" id="Caste">
+          <option value="" selected disabled>Choose Your Option</option>
+          <option value="general">General</option>
+          <option value="obc">OBC (Other Backward Class)</option>
+          <option value="sc">SC (Scheduled Caste)</option>
+          <option value="st">ST (Scheduled Tribe)</option>
+        </select>
+        <br />
+        <label for="Gender">Gender</label>
+        <br />
+        <select name="Gender" title="Gender" id="Gender">
+          <option value="" selected disabled>Choose Your Gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="nonbinary">Non-binary</option>
+          <option value="other">Other</option>
+        </select>
+        <br />
+        <label for="Income">Parent Annual Income</label>
+        <br />
+        <input
+          type="text"
+          name="Income"
+          id="Income"
+          required
+          aria
+          title="enter your first name"
+        />
+        <br />
+        <label for="Disability">Whether Disabled?</label>
+        <br />
+        <select name="Disability" title="Disability" id="Disability">
+          <option value="" selected disabled>Choose Your Option</option>
+          <option value="no">No</option>
+          <option value="yes">Yes</option>
+        </select>
+        <br />
+        <div class="button">
+          <button type="submit">Submit</button>
+          <button type="reset" class="second-bt">Reset</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

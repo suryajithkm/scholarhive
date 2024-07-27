@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ScholarHive!</title>
+
+    <style>
+      .title {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-right: 50px;
+        padding-left: 10px;
+        margin-bottom: -83px;
+      }
+      body {
+        background-image: url(cloud.jpg);
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .content {
+        height: 60vh;
+        position: relative;
+        bottom: 20px;
+        display: flex;
+        flex-direction: row;
+      }
+      .content:first-child {
+        height: 80vh;
+      }
+      .left {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        float: left;
+      }
+
+      em {
+        font-weight: bolder;
+        font-style: normal;
+      }
+
+      .right {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      nav a {
+        color: #000;
+        text-decoration: none;
+        font-size: medium;
+        text-align: justify;
+        padding: 10px;
+        position: relative;
+        top: 50px;
+      }
+      nav a:hover {
+        font-weight: bolder;
+        text-decoration: underline;
+      }
+      .Heading,
+      a {
+        font-size: 120px;
+        color: #000;
+        text-decoration: none;
+        position: relative;
+        bottom: 37px;
+        margin-bottom: 0.5 em;
+      }
+      .bt {
+        background-color: #1c677a;
+        border: burlywood;
+        color: black;
+        padding: 18px 32px;
+        border-radius: 30px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        position: relative;
+        bottom: 200px;
+      }
+
+      .bt:hover {
+        background-color: white;
+        color: black;
+        cursor: pointer;
+        font-weight: bold;
+      }
+
+      .moto {
+        font-family: 54px Anton;
+        font-size: 30px;
+        text-align: left;
+        margin-top: 0.5em;
+        font-weight: bolder;
+        margin-bottom: 0.5em;
+        position: relative;
+        bottom: 200px;
+      }
+      .img {
+        border-radius: 10px;
+        width: 500px;
+        height: 400px;
+        display: block;
+        float: right;
+        position: relative;
+        bottom: 200px;
+        left: 20px;
+      }
+
+      .clipart {
+        width: 20px;
+        height: 20px;
+        position: relative;
+        top: 3px;
+      }
+      h1::first-letter {
+        font-size: 2em;
+      }
+
+      .cpy {
+        float: right;
+      }
+      .content p {
+        position: relative;
+        bottom: 200px;
+      }
+
+      .nav {
+        position: sticky;
+      }
+      /* Add fade out animation to content when transitioning to login page */
+.fadeOut {
+  animation: fadeOut 1s ease-in-out forwards;
+}
+
+/* Add fade in animation to content on login page */
+.fadeIn {
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+/* Define fade out animation */
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Define fade in animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+    </style>
+  </head>
+  <body>
+    <div class="title">
+      <h1 class="Heading"><a href="#"> Scholarhive&reg; </a></h1>
+      <nav class="nav">
+        <a href="#">HOME</a>
+        <a href="#1">WHAT IS IT?</a>
+        <a href="#3">FEATURES</a>
+        <a href="#4">CONTACT</a>
+        <a href="Login.html"><em>LOGIN</em></a>
+      </nav>
+    </div>
+
+    <section>
+      <div class="content">
+        <div class="left">
+          <div class="text">
+            <p class="moto">
+              Discover Tailored Scholarship Matches. ScholarHive.
+            </p>
+            <p>
+              Discover scholarships effortlessly – ScholarHive saves you time
+              and hassle.
+            </p>
+            <button
+              type="button"
+              class="bt"
+              onclick="location.href='search.html'"
+            >
+              <img class="clipart" src="no bg/lens.png" alt="" /> Search
+              Scholarships
+            </button>
+          </div>
+        </div>
+
+        <div class="right"></div>
+      </div>
+
+      <div id="2" class="content"></div>
+    </section>
+    
+
+    <footer class="cpy">
+      <p>&copy 2023 ScholarHive</p>
+    </footer>
+  </body>
+</html>

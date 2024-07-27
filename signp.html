@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="login here" />
+    <meta
+      name="google-signin-client_id"
+      content="603403310556-2imf8r5d85o931ekfn0artltt8aid760.apps.googleusercontent.com"
+    />
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+    <style>
+      #confirmPasswordError {
+  font-size: 12px;
+}
+      body {
+        
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: 1.2em;
+        background-image: url(bg.jpg);
+      }
+      .submitbt {
+        background: #0066A2;
+	color: white;
+	border-style: outset;
+	border-color: #0066A2;
+	height: 50px;
+	width: 100px;
+	font: bold15px arial,sans-serif;
+	text-shadow: none;
+
+      }
+      .submit button[type="submit"]{
+        top: 16px;
+        left: 12px;
+        
+      }
+    
+                  .left {
+                    box-sizing: border-box;
+                    justify-content: center;
+                    align-items: center;
+                    display: flex;
+                    width: 30%;
+                    height: 90vh;
+                    background-image: url(pexels.jpg);
+                    border-top-left-radius: 13px;
+                    border-bottom-left-radius: 13px;
+                  }
+                  .right {
+                    box-sizing: border-box;
+                    height: 90vh;
+                    width: 70%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: white;
+                    border-top-right-radius: 13px;
+                    border-bottom-right-radius: 13px;
+                  }
+                  .signin {
+                    box-sizing: border-box;
+                    border: none;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 140vh;
+                    height: 90vh;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                  
+                    border-radius: 10px;
+                  }
+                  .text {
+                    align-items: center;
+                    margin-left: 38px;
+                  }
+                  .bt {
+                    background-image: url(pexels-form.jpg);
+  border: 2px solid black;
+  color: black;
+  padding: 17px 78px;
+  border-radius: 34px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  position: relative;
+                  }
+
+                  .bt:hover {
+                    background-color: white;
+                    background-image: none;
+                    border: 2px solid black;
+                    color: black;
+                    cursor:pointer;
+                    font-weight: bold;
+                    }
+                  .logo{
+                    width: 50px;
+              height: 50px;
+              border-radius: 50%;
+              border: 2px solid #333; /* set the border to a dark color */
+              border-color: #ccc; /* lighten the border color */
+
+              background-color: #f0f0f0;
+              color: #333;
+              overflow: hidden;
+
+              }
+              .logo:hover{
+                cursor: pointer;
+              }
+              .form
+        {
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+            width: 100%;
+            height: 100%;
+        }
+        .field input:not([name="dob"]) {
+          justify-content: center;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            width: 7cm;
+      height: 0.75cm;
+      background-image: url(pexels-form.jpg);
+      border-color: white;
+
+        }
+        .gender{
+            display: flex;
+            width: 10px;
+
+     }
+    
+    </style>
+  </head>
+  <body>
+    
+    <div class="signin">
+      <div class="left">
+        <div class="text">
+          <h2>Welcome!</h2>
+          <p>To keep connected with us please login with your personal info</p>
+          <button type="button" class="bt" onclick="location.href='LOGIN.HTML'">
+            SIGN IN
+          </button>
+        </div>
+      </div>
+      <div class="right">
+        <div class="form">
+          <h1>Create Account</h1>
+          <span class="g-signin2" data-longtitle="true"></span>
+          <p>or use your email account</p>
+
+          <div class="field">
+            <form action="connect.php" method="post"  onsubmit="return validateForm()">
+            <input
+              type="text"
+              name="fname"
+              id="fname"
+              placeholder="First Name"
+              required
+              aria
+              title="enter your first name"
+            />
+            <input type="text" name="lname" placeholder="Surname" required />
+            <br>
+            <label for="day">Date of birth:</label>
+            
+            <br>
+            
+            <input name="dob" type="date">
+            <br>
+            <br>
+            </select>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              required
+              placeholder="email address"
+            />
+
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="New password"
+              required
+            />
+           
+            <input
+              type="password"
+              name="confirmpassword"
+              placeholder="Re enter Password"
+              id="confirmPassword"
+            />
+            <span id="confirmPasswordError"style="color: red;"></span><br>
+
+      
+            
+            <fieldset>
+                <legend>Gender</legend>
+                <div class="gender">
+              <input type="radio" name="gender" id="male" value="m" />
+              <label for="male">Male</label>
+              <input type="radio" name="gender" id="female" value="f" />
+              <label for="female">Female</label>
+              <input type="radio" name="gender" id="Other" value="o" />
+              <label for="Other">Other</label>
+              <div class="gender">
+            </fieldset>
+            <br />
+            <label for="sc">Scholarship Category</label>
+            <select name="Scholarship_Category" id="sc" aria-placeholder="nonee">
+              <option selected disabled>none</option>
+              <option value="pre matric">pre matric</option>
+              <option value="post matric">post matric</option>
+            </select>
+            <br />
+
+          
+            </fieldset>
+            <div class="submit">
+              <button class="bt" id='submitButton' type="submit">SIGN UP</button>
+            </div>
+          </form>
+       
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+const passwordInput = document.getElementById('password');
+const confirmPasswordInput = document.getElementById('confirmPassword');
+const confirmPasswordError = document.getElementById('confirmPasswordError');
+const submitButton = document.getElementById('submitButton');
+
+function validatePassword() {
+  const passwordRegex = /^(?=.*\d)(?=.*[A-Z]).{8,}$/;
+  return passwordRegex.test(passwordInput.value);
+}
+
+function validateConfirmPassword() {
+  if (passwordInput.value !== confirmPasswordInput.value) {
+    confirmPasswordError.textContent = 'Passwords do not match!';
+    submitButton.disabled = true;
+  } else {
+    confirmPasswordError.textContent = '';
+    submitButton.disabled = false;
+  }
+}
+
+function validatePasswordInput() {
+  if (!validatePassword()) {
+    passwordInput.setCustomValidity('Password must be at least 8 characters long, contain at least one capital letter, and at least one number.');
+    submitButton.disabled = true;
+  } else {
+    passwordInput.setCustomValidity('');
+    submitButton.disabled = false;
+  }
+}
+
+passwordInput.addEventListener('input', validatePasswordInput);
+confirmPasswordInput.addEventListener('input', validateConfirmPassword);
+
+
+</script>
+
+</html>
